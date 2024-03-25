@@ -1,6 +1,6 @@
 import { HttpStatus } from '@nestjs/common';
-import { CreateUserDto, UpdatePasswordDto } from 'src/dto/userDTO';
-import { User, UserWithoutPassword } from 'src/interfaces/user';
+import { CreateUserDto, UpdatePasswordDto } from 'src/user/dto/userDTO';
+import { User, UserWithoutPassword } from 'src/user/types/user';
 import { v4 as uuidv4 } from 'uuid';
 
 let users: User[] = [];

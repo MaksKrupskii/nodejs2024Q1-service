@@ -1,7 +1,7 @@
-import { CreateAlbumDto } from 'src/dto/albumDTO';
-import { CreateArtistDto } from 'src/dto/artistDTO';
-import { CreateTrackDto } from 'src/dto/trackDTO';
-import { CreateUserDto, UpdatePasswordDto } from 'src/dto/userDTO';
+import { CreateAlbumDto } from 'src/album/dto/albumDTO';
+import { CreateArtistDto } from 'src/artist/dto/artistDTO';
+import { CreateTrackDto } from 'src/track/dto/trackDTO';
+import { CreateUserDto, UpdatePasswordDto } from 'src/user/dto/userDTO';
 
 const FieldsMap = {
   user: [

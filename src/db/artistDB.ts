@@ -1,5 +1,5 @@
-import { CreateArtistDto } from 'src/dto/artistDTO';
-import { Artist } from 'src/interfaces/artist';
+import { CreateArtistDto } from 'src/artist/dto/artistDTO';
+import { Artist } from 'src/artist/types/artist';
 import { v4 as uuidv4 } from 'uuid';
 import { deleteArtistFromAlbum } from './albumDB';
 import { deleteArtistFromTrack } from './trackDB';

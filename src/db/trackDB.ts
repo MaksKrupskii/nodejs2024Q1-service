@@ -1,5 +1,5 @@
-import { CreateTrackDto } from 'src/dto/trackDTO';
-import { Track } from 'src/interfaces/track';
+import { CreateTrackDto } from 'src/track/dto/trackDTO';
+import { Track } from 'src/track/types/track';
 import { v4 as uuidv4 } from 'uuid';
 
 let tracks: Track[] = [];

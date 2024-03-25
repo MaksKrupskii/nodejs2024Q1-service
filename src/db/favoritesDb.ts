@@ -1,4 +1,4 @@
-import { FavoritesResponse } from 'src/interfaces/favorites';
+import { FavoritesResponse } from 'src/favorites/types/favorites';
 import { getAlbumById } from './albumDB';
 import { getTrackById } from './trackDB';
 import { getArtistById } from './artistDB';
@@ -13,8 +13,8 @@ export const getAllFavorites = (): FavoritesResponse => {
   return favorites;
 };
 
-export const addTrackToFavorites = (id: string) => {
-  const track = getTrackById(id);
+export const addTrackToFavorites = (track) => {
+  // const track = getTrackById(id);
   favorites.tracks.push(track);
 };
 
@@ -28,8 +28,8 @@ export const deleteTrackFromFavorites = (id: string) => {
   favorites.tracks = favorites.tracks.filter((track) => track.id !== id);
 };
 
-export const addAlbumToFavorites = (id: string) => {
-  const album = getAlbumById(id);
+export const addAlbumToFavorites = (album) => {
+  // const album = getAlbumById(id);
   favorites.albums.push(album);
 };
 
@@ -43,8 +43,8 @@ export const deleteAlbumFromFavorites = (id: string) => {
   favorites.albums = favorites.albums.filter((album) => album.id !== id);
 };
 
-export const addArtistToFavorites = (id: string) => {
-  const artist = getArtistById(id);
+export const addArtistToFavorites = async (artist) => {
+  // const artist = getArtistById(id);
   favorites.artists.push(artist);
 };
 

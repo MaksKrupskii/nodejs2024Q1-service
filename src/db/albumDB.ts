@@ -1,5 +1,5 @@
-import { CreateAlbumDto } from 'src/dto/albumDTO';
-import { Album } from 'src/interfaces/album';
+import { CreateAlbumDto } from 'src/album/dto/albumDTO';
+import { Album } from 'src/album/types/album';
 import { v4 as uuidv4 } from 'uuid';
 import { deleteAlbumFromTrack } from './trackDB';
 
