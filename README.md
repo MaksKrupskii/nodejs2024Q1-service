@@ -20,8 +20,9 @@ npm install
 ## Running application
 
 ```
-create .env file with PORT=4000
-npm start
+Create .env file based on .env.example
+To start the docker container: docker-compose up --build
+To test endpoints run: npm run test
 ```
 
 ## Testing
