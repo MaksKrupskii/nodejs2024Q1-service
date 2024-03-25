@@ -1,0 +1,42 @@
+version: '3.9'
+networks:
+  homelibnet:
+    driver: bridge
+
+services:
+  node:
+    container_name: nodejs2024-service
+    image: makskrupski/nodejs2024-homelibrary
+    build: ./
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ./:/usr/app/
+      - /usr/app/node_modules
+    depends_on:
+      - db
+    networks:
+      - homelibnet
+    command: ["npm", "run", "migrate:start:dev"]
+  
+  db:
+    container_name: nodejs2024-docker-db
+    build: ./db
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - '${POSTGRES_PORT}:${POSTGRES_PORT}'
+    volumes:
+      - data:/db/data
+      - logs:/db/logs
+    networks:
+      - homelibnet
+
+volumes:
+  node-modules:
+  logs:
+  data:
