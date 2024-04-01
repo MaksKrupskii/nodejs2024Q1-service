@@ -5,7 +5,7 @@ networks:
 
 services:
   node:
-    container_name: nodejs2024-service
+    container_name: nodejs2024
     image: makskrupski/nodejs2024-homelibrary
     build: ./
     restart: always
