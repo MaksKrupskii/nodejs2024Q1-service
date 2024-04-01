@@ -50,7 +50,6 @@ export class UserService {
   }
 
   async createUser(createUserDto: CreateUserDto) {
-    const time = Number(new Date());
     const newUser = await prisma.user.create({
       data: {
         id: uuidv4(),
@@ -89,7 +88,6 @@ export class UserService {
       throw new HttpException('old password is wrong', HttpStatus.FORBIDDEN);
     }
 
-    const updateTime = Number(new Date());
     const updatedUser = await prisma.user.update({
       where: { id: userId },
       data: {
@@ -97,7 +95,6 @@ export class UserService {
         version: {
           increment: 1,
         },
-        // updatedAt: updateTime,
       },
       select: {
         id: true,

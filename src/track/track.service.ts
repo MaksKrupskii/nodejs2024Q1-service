@@ -35,32 +35,13 @@ export class TrackService {
       },
     });
     return newTrack;
-    // if (hasAllFields(createTrackDto, 'track')) {
-    //   const newTrack = await prisma.track.create({
-    //     data: {
-    //       id: uuidv4(),
-    //       ...createTrackDto,
-    //     },
-    //   });
-    //   return newTrack;
-    // } else {
-    //   throw new HttpException(
-    //     'body does not contain required fields',
-    //     HttpStatus.BAD_REQUEST,
-    //   );
-    // }
   }
 
   async updateTrack(id: string, updateTrackDto: CreateTrackDto) {
     if (!isUUID(id)) {
       throw new HttpException('trackId is invalid', HttpStatus.BAD_REQUEST);
     }
-    // if (!hasAllFields(updateTrackDto, 'track')) {
-    //   throw new HttpException(
-    //     'body does not contain required fields',
-    //     HttpStatus.BAD_REQUEST,
-    //   );
-    // }
+
     const track = await prisma.track.findFirst({ where: { id } });
 
     if (!track) {
@@ -86,7 +67,5 @@ export class TrackService {
       throw new HttpException("track doesn't exist", HttpStatus.NOT_FOUND);
     }
     await prisma.track.delete({ where: { id } });
-
-    // deleteTrackFromFavorites(id);
   }
 }

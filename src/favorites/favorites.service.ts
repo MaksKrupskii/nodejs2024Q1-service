@@ -71,7 +71,7 @@ export class FavoritesService {
         HttpStatus.NOT_FOUND,
       );
     }
-    // deleteArtistFromFavorites(id);
+
     await prisma.artist.update({
       where: { id },
       data: { isFavorite: false },

@@ -74,6 +74,5 @@ export class ArtistService {
       where: { artistId: id },
       data: { artistId: null },
     });
-    // deleteArtistFromFavorites(id);
   }
 }

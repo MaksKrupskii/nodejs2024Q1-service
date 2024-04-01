@@ -14,7 +14,6 @@ export const getAllFavorites = (): FavoritesResponse => {
 };
 
 export const addTrackToFavorites = (track) => {
-  // const track = getTrackById(id);
   favorites.tracks.push(track);
 };
 
@@ -29,7 +28,6 @@ export const deleteTrackFromFavorites = (id: string) => {
 };
 
 export const addAlbumToFavorites = (album) => {
-  // const album = getAlbumById(id);
   favorites.albums.push(album);
 };
 
@@ -44,7 +42,6 @@ export const deleteAlbumFromFavorites = (id: string) => {
 };
 
 export const addArtistToFavorites = async (artist) => {
-  // const artist = getArtistById(id);
   favorites.artists.push(artist);
 };
 
